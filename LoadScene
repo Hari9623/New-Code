@@ -1,9 +1,1 @@
-using UnityEngine.SceneManagement;
 
-public class Back: MonoBehaviour
-{
-    public void Callback() 
-    {
-        SceneManager.LoadScene(0);
-    }
-}
