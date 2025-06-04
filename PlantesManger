@@ -1,0 +1,27 @@
+using UnityEngine;
+using TMPro;
+
+
+
+public class PlantesManger : MonoBehaviour
+{
+    public GameObject Planet;
+    public string infoText;
+    public AudioClip infoAudio;
+    public TMP_Text InfoUIText;
+    public AudioSource InfoAudioSource;
+
+    public void OnFound()
+    {
+        Planet.SetActive(true);
+        InfoUIText.text = infoText;
+        InfoAudioSource.clip = infoAudio;
+        InfoAudioSource.Play();
+    }
+
+    public void OnLost()
+    {
+        Planet.SetActive(false); 
+        InfoAudioSource.Pause();
+    }
+}
