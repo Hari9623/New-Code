@@ -1,0 +1,11 @@
+public class Rotation:
+{
+    public float Speed;
+    public Vector3 Roatate;
+
+    void Update()
+    {
+        transform.Rotate(Roatate* Speed*Time.deltaTime);
+
+    }
+}
