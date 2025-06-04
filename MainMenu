@@ -1,0 +1,35 @@
+using UnityEngine.SceneManagement;
+
+
+public class MainMenu: MonoBehaviour
+{
+    public GameObject mainMenu;
+    public GameObject Loading;
+
+    void Start()
+    {
+        Loading.SetActive(false);
+        mainMenu.SetActive(true);
+    }
+
+    public void ExperienceAR() 
+    {
+        StartCoroutine(DelayLoadScene());
+  
+    }
+
+    IEnumerator DelayLoadScene() 
+    {
+        mainMenu.SetActive(true);
+        Loading.SetActive(false);
+        yield return new WaitForSeconds(3);
+        SceneManager.LoadScene(1);
+
+    }
+
+    public void Exit() 
+    {
+        Application.Quit();
+    }
+
+}
